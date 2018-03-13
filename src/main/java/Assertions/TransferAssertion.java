@@ -21,6 +21,5 @@ public class TransferAssertion extends MainPage {
 
     public void isConfirmationMessageDisplayed(){
         Assert.assertTrue(confirmationMessage.size()!=0);
-        System.out.println("new message github");
     }
 }
