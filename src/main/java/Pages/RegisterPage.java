@@ -48,6 +48,9 @@ public class RegisterPage extends MainPage {
     @FindBy(css = "[href$='transfer.htm']")
     private WebElement tranferFundsLink;
 
+    @FindBy(css = ".home")
+    private WebElement homeButton;
+
     public RegisterPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -119,7 +122,8 @@ public class RegisterPage extends MainPage {
         return new TransferPage(driver);
     }
 
-
-
-
+    public IndexPage clickHomeButton(){
+        homeButton.click();
+        return new IndexPage(driver);
+    }
 }

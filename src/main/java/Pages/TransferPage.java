@@ -31,20 +31,30 @@ public class TransferPage extends MainPage {
         transferAssertion = new TransferAssertion(driver);
     }
 
-    public TransferPage setAmount(String amount) {
-        amountInput.sendKeys(amount);
+    public TransferPage setAmount(String transferAmount) {
+        amountInput.sendKeys(transferAmount);
         return this;
     }
 
-    public TransferPage setFromAccountId(String fromAccountId) {
+    public TransferPage setDefaultFromAccountId(){
         fromAccountSelector.click();
         return this;
     }
 
-    public TransferPage setToAccountId(String toAccountId) {
+    public TransferPage setDefaultToAccountId(){
         toAccountSelector.click();
         return this;
     }
+
+//    public TransferPage setFromAccountId(String fromAccountId) {
+//        fromAccountSelector.click();
+//        return this;
+//    }
+//
+//    public TransferPage setToAccountId(String toAccountId) {
+//        toAccountSelector.click();
+//        return this;
+//    }
 
     public TransferPage clickTransferButton() {
         transferButton.click();
