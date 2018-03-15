@@ -5,7 +5,7 @@ import Pages.TransferPage;
 
 public class TransferScenario implements Scenario<IndexPage, TransferPage> {
 
-    String transferAmount = "50";
+    String transferAmount = "50.00";
 
     @Override
     public TransferPage run(IndexPage entry){
@@ -15,5 +15,4 @@ public class TransferScenario implements Scenario<IndexPage, TransferPage> {
                 .setDefaultToAccountId()
                 .clickTransferButton();
     }
-
 }

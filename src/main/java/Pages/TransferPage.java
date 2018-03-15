@@ -23,8 +23,6 @@ public class TransferPage extends MainPage {
     @FindBy(css = "[value='Transfer']")
     private WebElement transferButton;
 
-
-
     public TransferPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -60,5 +58,4 @@ public class TransferPage extends MainPage {
         transferButton.click();
         return this;
     }
-
 }
