@@ -10,6 +10,9 @@ public class OverviewPage extends MainPage {
     @FindBy(css = "[href$='transfer.htm']")
     private WebElement transferFundsLink;
 
+    @FindBy(css = "[href$='openaccount.htm']")
+    private WebElement openNewAccountLink;
+
     public OverviewPage(WebDriver driver){
         super(driver);
         PageFactory.initElements(driver, this);
@@ -18,5 +21,10 @@ public class OverviewPage extends MainPage {
     public TransferPage clickTransferFundsLink(){
         transferFundsLink.click();
         return new TransferPage(driver);
+    }
+
+    public OpenAccountPage clickOpenNewAccountLink(){
+        openNewAccountLink.click();
+        return new OpenAccountPage(driver);
     }
 }

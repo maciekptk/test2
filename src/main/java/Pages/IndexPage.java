@@ -13,6 +13,15 @@ public class IndexPage extends MainPage {
     @FindBy(css = "[href$='transfer.htm']")
     private WebElement transferFundsLink;
 
+    @FindBy(css = "[name='username']")
+    private WebElement inputUsername;
+
+    @FindBy(css = "[name='password']")
+    private WebElement inputPassword;
+
+    @FindBy(css = "[value='Log In']")
+    private WebElement loginButton;
+
     public IndexPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -23,6 +32,23 @@ public class IndexPage extends MainPage {
         waitForJStoLoad();
         return this;
     }
+
+    public IndexPage setUsername(String username){
+        inputUsername.sendKeys(username);
+        return this;
+    }
+
+    public IndexPage setPassword(String password){
+        inputPassword.sendKeys(password);
+        return this;
+    }
+
+    public OverviewPage clickLoginButton(){
+        loginButton.click();
+        return new OverviewPage(driver);
+    }
+
+
 
     public RegisterPage clickRegisterLink(){
         registerLink.click();
