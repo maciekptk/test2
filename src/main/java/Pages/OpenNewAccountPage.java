@@ -10,10 +10,10 @@ public class OpenNewAccountPage extends MainPage {
 
     public AccountAssertion accountAssertion;
 
-    @FindBy(css = "[id='type']")
+    @FindBy(css = "[id='type'] [value='SAVINGS']")
     private WebElement accountType;
 
-    @FindBy(css = "[id='fromAccountId']")
+    @FindBy(css = "[id='fromAccountId'] option:first-child")
     private WebElement fromAccountId;
 
     @FindBy(css = "[value='Open New Account']")
