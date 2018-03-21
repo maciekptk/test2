@@ -19,7 +19,7 @@ public class OpenNewAccountPage extends MainPage {
     @FindBy(css = "[value='Open New Account']")
     private WebElement openNewAccountButton;
 
-    public OpenNewAccountPage(WebDriver driver) {
+    public OpenNewAccountPage(WebDriver driver) {//dodanie komcia
         super(driver);
         PageFactory.initElements(driver, this);
         accountAssertion = new AccountAssertion(driver);
