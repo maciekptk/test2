@@ -1,12 +1,12 @@
 package Scenarios;
 
-import Pages.OpenAccountPage;
+import Pages.OpenNewAccountPage;
 import Pages.OverviewPage;
 
-public class OpenNewAccountScenario implements Scenario<OverviewPage, OpenAccountPage> {
+public class OpenNewAccountScenario implements Scenario<OverviewPage, OpenNewAccountPage> {
 
     @Override
-    public OpenAccountPage run(OverviewPage entry) {
+    public OpenNewAccountPage run(OverviewPage entry) {
         return entry.clickOpenNewAccountLink()
                 .selectAccountType()
                 .selectFromAccountId()

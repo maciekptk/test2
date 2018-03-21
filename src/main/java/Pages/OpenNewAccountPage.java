@@ -6,7 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class OpenAccountPage extends MainPage {
+public class OpenNewAccountPage extends MainPage {
 
     public AccountAssertion accountAssertion;
 
@@ -19,23 +19,23 @@ public class OpenAccountPage extends MainPage {
     @FindBy(css = "[value='Open New Account']")
     private WebElement openNewAccountButton;
 
-    public OpenAccountPage(WebDriver driver) {
+    public OpenNewAccountPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
         accountAssertion = new AccountAssertion(driver);
     }
 
-    public OpenAccountPage selectAccountType(){
+    public OpenNewAccountPage selectAccountType(){
         accountType.click();
         return this;
     }
 
-    public OpenAccountPage selectFromAccountId(){
+    public OpenNewAccountPage selectFromAccountId(){
         fromAccountId.click();
         return this;
     }
 
-    public OpenAccountPage clickOpenNewAccountButton(){
+    public OpenNewAccountPage clickOpenNewAccountButton(){
         openNewAccountButton.click();
         return this;
     }

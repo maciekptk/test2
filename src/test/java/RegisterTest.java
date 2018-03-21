@@ -2,6 +2,7 @@ import Scenarios.RegisterScenario;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
+
 import java.util.Random;
 
 public class RegisterTest extends MainTest {
@@ -16,10 +17,7 @@ public class RegisterTest extends MainTest {
         String ssn = ssnTemplate + randomInt;
 
         indexPage.run(new RegisterScenario(firstName, lastName, street, city, state, zipCode, password, usernameTemplate, ssnTemplate, username, ssn)) // parametry w RegisterScenario z konstruktora, dodac dane testowe tutaj (w tescie)
-                .registerAssertion.isWelcomeMessageDisplayed();
+                .registerAssertion
+                .isWelcomeMessageDisplayed();
     }
-
-    @AfterTest
-
-
 }

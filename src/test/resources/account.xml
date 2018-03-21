@@ -1,0 +1,10 @@
+<suite name="Account">
+    <parameter name="username" value="johnwayne512"/>
+    <parameter name="password" value="asdfzxcv"/>
+
+    <test name="Create New Account test">
+        <classes>
+            <class name="CreateNewAccountTest"/>
+        </classes>
+    </test>
+</suite>

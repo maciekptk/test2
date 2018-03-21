@@ -5,7 +5,11 @@ import Pages.TransferPage;
 
 public class TransferScenario implements Scenario<IndexPage, TransferPage> {
 
-    String transferAmount = "50.00";
+    String transferAmount;
+
+    public TransferScenario(String transferAmount) {
+        this.transferAmount = transferAmount;
+    }
 
     @Override
     public TransferPage run(IndexPage entry){

@@ -112,9 +112,9 @@ public class RegisterPage extends MainPage {
         return this;
     }
 
-    public OpenAccountPage clickOpenNewAccountLink(){
+    public OpenNewAccountPage clickOpenNewAccountLink(){
         openNewAccountLink.click();
-        return new OpenAccountPage(driver);
+        return new OpenNewAccountPage(driver);
     }
 
     public TransferPage clickTransferFundsLink(){

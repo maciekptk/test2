@@ -1,4 +1,4 @@
-<suite name="Regression">
+<suite name="Registration">
     <parameter name="firstName" value="John"/>
     <parameter name="lastName" value="Wayne"/>
     <parameter name="street" value="Main Street 10"/>
@@ -8,16 +8,15 @@
     <parameter name="ssnTemplate" value="AABB"/>
     <parameter name="usernameTemplate" value="johnwayne"/>
     <parameter name="password" value="asdfzxcv"/>
-    <!--<parameter name="ssn" value="ZXCV"/>-->
-    <!--<parameter name="username" value="QWERTY"/>-->
-    <test name="Login test">
+
+    <parameter name="transferAmount" value="123"/>
+    <parameter name="emptyTransferAmount" value=""/>
+    <parameter name="invalidTransferAmount" value="qwerty"/>
+    <parameter name="zeroTransferAmount" value="0"/>
+
+    <test name="Transfer test">
         <classes>
-            <class name="CreateNewAccountTest"/>
-        </classes>
-    </test>
-    <test name="Registration test">
-        <classes>
-            <class name="RegisterTest"/>
+            <class name="TransferTest"/>
         </classes>
     </test>
 </suite>

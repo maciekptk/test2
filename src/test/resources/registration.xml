@@ -1,0 +1,23 @@
+<suite name="Registration">
+    <parameter name="firstName" value="John"/>
+    <parameter name="lastName" value="Wayne"/>
+    <parameter name="street" value="Main Street 10"/>
+    <parameter name="city" value="Los Angeles"/>
+    <parameter name="state" value="California"/>
+    <parameter name="zipCode" value="90002"/>
+    <parameter name="ssnTemplate" value="AABB"/>
+    <parameter name="usernameTemplate" value="johnwayne"/>
+    <parameter name="password" value="asdfzxcv"/>
+    <!--<parameter name="ssn" value="ZXCV"/>-->
+    <!--<parameter name="username" value="QWERTY"/>-->
+    <!--<test name="Login test">-->
+        <!--<classes>-->
+            <!--<class name="CreateNewAccountTest"/>-->
+        <!--</classes>-->
+    <!--</test>-->
+    <test name="Registration test">
+        <classes>
+            <class name="RegisterTest"/>
+        </classes>
+    </test>
+</suite>
