@@ -5,13 +5,28 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.ITestContext;
 
 public abstract class MainPage {
 
     protected WebDriver driver;
+    private ITestContext context;
 
-    public MainPage(WebDriver driver){
+    public MainPage(WebDriver driver, ITestContext context){
         this.driver = driver;
+        this.context = context;
+    }
+
+    protected void setContextAttribute(String attribute, String value){
+        context.setAttribute(attribute, value);
+    }
+
+    protected String getContextAttribute(String attribute){
+        return context.getAttribute(attribute).toString();
+    }
+
+    protected ITestContext getContext(){
+        return this.context;
     }
 
     public <I extends MainPage, O extends MainPage> O run(Scenario<I, O> scenario) {
