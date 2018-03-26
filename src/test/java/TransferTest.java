@@ -17,39 +17,36 @@ public class TransferTest extends MainTest {
         String username = usernameTemplate + randomInt;
         String ssn = ssnTemplate + randomInt;
 
-        registerPage = indexPage.run(new RegisterScenario(firstName, lastName, street, city, state, zipCode, password, usernameTemplate, ssnTemplate, username, ssn));
+        indexPage.run(new RegisterScenario(firstName, lastName, street, city, state, zipCode, password, usernameTemplate, ssnTemplate, username, ssn))
+                .clickHomeButton();
     }
 
     @Test
     @Parameters({"transferAmount"})
     public void shouldTransfer(String transferAmount){
-        registerPage.clickHomeButton()
-                .run(new TransferScenario(transferAmount))
+        indexPage.run(new TransferScenario(transferAmount))
                 .transferAssertion.isConfirmationMessageDisplayed();
     }
 
     @Test
-    @Parameters({"emptyTransferAmount"})
-    public void emptyAmountTranfer(String emptyTransferAmount){
-        registerPage.clickHomeButton()
-                .run(new TransferScenario(emptyTransferAmount))
+    public void emptyAmountTranfer(){
+        String transferAmount = "";
+        indexPage.run(new TransferScenario(transferAmount))
                 .transferAssertion.isEmptyAmountErrorDisplayed();
     }
 
     @Test
-    @Parameters({"invalidTransferAmount"})
-    public void invalidAmountTranfer(String invalidTransferAmount){
-        registerPage.clickHomeButton()
-                .run(new TransferScenario(invalidTransferAmount))
+    public void invalidAmountTranfer(){
+        String transferAmount = "qwerty";
+        indexPage.run(new TransferScenario(transferAmount))
                 .transferAssertion.isInvalidAmountErrorDisplayed();
     }
 
     @Test
-    @Parameters({"zeroTransferAmount"})
     //failujacy test który wykrywa, że dozwolone jest zrobienie przelewu na kwotę = 0
-    public void zeroAmountTranfer(String zeroTransferAmount) {
-        registerPage.clickHomeButton()
-                .run(new TransferScenario(zeroTransferAmount))
+    public void zeroAmountTranfer() {
+        String transferAmount = "0";
+        indexPage.run(new TransferScenario(transferAmount))
                 .transferAssertion.isInvalidAmountErrorDisplayed();
     }
 }

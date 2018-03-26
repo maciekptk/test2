@@ -3,10 +3,7 @@ import Pages.OverviewPage;
 import Pages.RegisterPage;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.AfterTest;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.BeforeTest;
+import org.testng.annotations.*;
 
 public class MainTest {
 
@@ -16,10 +13,11 @@ public class MainTest {
     OverviewPage overviewPage;
 
     @BeforeTest
-    public void before() {
+    @Parameters({"url"})
+    public void before(String url) {
         driver = new ChromeDriver();
-        indexPage = new IndexPage(driver);
-        registerPage = new RegisterPage(driver);
+        indexPage = new IndexPage(driver, url);
+        //registerPage = new RegisterPage(driver);
     }
 
     @AfterTest

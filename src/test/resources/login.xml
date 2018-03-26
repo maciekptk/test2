@@ -1,5 +1,6 @@
 <suite name="Login">
-    <parameter name="username" value="johnwayne512"/>
+    <parameter name="url" value="http://parabank.parasoft.com"/>
+    <parameter name="username" value="johnwayne922"/>
     <parameter name="password" value="asdfzxcv"/>
     <test name="Login test">
         <classes>

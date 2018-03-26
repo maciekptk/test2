@@ -1,4 +1,5 @@
 <suite name="Registration">
+    <parameter name="url" value="http://parabank.parasoft.com"/>
     <parameter name="firstName" value="John"/>
     <parameter name="lastName" value="Wayne"/>
     <parameter name="street" value="Main Street 10"/>
@@ -10,10 +11,6 @@
     <parameter name="password" value="asdfzxcv"/>
 
     <parameter name="transferAmount" value="123"/>
-    <parameter name="emptyTransferAmount" value=""/>
-    <parameter name="invalidTransferAmount" value="qwerty"/>
-    <parameter name="zeroTransferAmount" value="0"/>
-
     <test name="Transfer test">
         <classes>
             <class name="TransferTest"/>

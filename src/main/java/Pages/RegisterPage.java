@@ -51,6 +51,8 @@ public class RegisterPage extends MainPage {
     @FindBy(css = ".home")
     private WebElement homeButton;
 
+    private String url;
+
     public RegisterPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
@@ -124,6 +126,6 @@ public class RegisterPage extends MainPage {
 
     public IndexPage clickHomeButton(){
         homeButton.click();
-        return new IndexPage(driver);
+        return new IndexPage(driver, url);
     }
 }

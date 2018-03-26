@@ -15,8 +15,8 @@ public class WelcomePage extends MainPage {
         PageFactory.initElements(driver, this);
     }
 
-    public IndexPage clickHomeButton(){
+    public IndexPage clickHomeButton(String url){
         homeButton.click();
-        return new IndexPage(driver);
+        return new IndexPage(driver, url);
     }
 }

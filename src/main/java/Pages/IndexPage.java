@@ -22,13 +22,16 @@ public class IndexPage extends MainPage {
     @FindBy(css = "[value='Log In']")
     private WebElement loginButton;
 
-    public IndexPage(WebDriver driver) {
+    private String url;
+
+    public IndexPage(WebDriver driver, String url) {
         super(driver);
         PageFactory.initElements(driver, this);
+        this.url = url;
     }
 
     public IndexPage openIndexPage(){
-        driver.get("http://parabank.parasoft.com");
+        driver.get(url);
         waitForJStoLoad();
         return this;
     }

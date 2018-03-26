@@ -1,4 +1,5 @@
 <suite name="Registration">
+    <parameter name="url" value="http://parabank.parasoft.com"/>
     <parameter name="firstName" value="John"/>
     <parameter name="lastName" value="Wayne"/>
     <parameter name="street" value="Main Street 10"/>
