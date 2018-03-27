@@ -9,13 +9,6 @@
     <parameter name="ssnTemplate" value="AABB"/>
     <parameter name="usernameTemplate" value="johnwayne"/>
     <parameter name="password" value="asdfzxcv"/>
-    <!--<parameter name="ssn" value="ZXCV"/>-->
-    <!--<parameter name="username" value="QWERTY"/>-->
-    <!--<test name="Login test">-->
-        <!--<classes>-->
-            <!--<class name="CreateNewAccountTest"/>-->
-        <!--</classes>-->
-    <!--</test>-->
     <test name="Registration test">
         <classes>
             <class name="RegisterTest"/>

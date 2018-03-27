@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class RegisterPage extends MainPage {
     public RegisterAssertion registerAssertion;
@@ -53,10 +54,10 @@ public class RegisterPage extends MainPage {
 
     private String url;
 
-    public RegisterPage(WebDriver driver) {
-        super(driver);
+    public RegisterPage(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
-        registerAssertion = new RegisterAssertion(driver);
+        registerAssertion = new RegisterAssertion(driver, context);
     }
 
     public RegisterPage setFirstName(String firstName){
@@ -116,16 +117,16 @@ public class RegisterPage extends MainPage {
 
     public OpenNewAccountPage clickOpenNewAccountLink(){
         openNewAccountLink.click();
-        return new OpenNewAccountPage(driver);
+        return new OpenNewAccountPage(driver, getContext());
     }
 
     public TransferPage clickTransferFundsLink(){
         tranferFundsLink.click();
-        return new TransferPage(driver);
+        return new TransferPage(driver, getContext());
     }
 
     public IndexPage clickHomeButton(){
         homeButton.click();
-        return new IndexPage(driver, url);
+        return new IndexPage(driver, url, getContext());
     }
 }

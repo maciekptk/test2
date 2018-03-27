@@ -6,6 +6,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
+import org.testng.ITestContext;
 
 import java.util.List;
 
@@ -20,8 +21,8 @@ public class RegisterAssertion extends MainPage {
     @FindBy(css = ".title")
     private WebElement correctWelcomeMessage;
 
-    public RegisterAssertion(WebDriver driver) {
-        super(driver);
+    public RegisterAssertion(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
     }
 

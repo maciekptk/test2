@@ -17,7 +17,7 @@ public class MainTest {
     @Parameters({"url"})
     public void before(ITestContext context, String url) {
         driver = new ChromeDriver();
-        indexPage = new IndexPage(driver, url);
+        indexPage = new IndexPage(driver, url, context);
         this.url = url;
         this.context = context;
 

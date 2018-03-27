@@ -5,6 +5,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class OpenNewAccountPage extends MainPage {
 
@@ -19,10 +20,10 @@ public class OpenNewAccountPage extends MainPage {
     @FindBy(css = "[value='Open New Account']")
     private WebElement openNewAccountButton;
 
-    public OpenNewAccountPage(WebDriver driver) {
-        super(driver);
+    public OpenNewAccountPage(WebDriver driver, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
-        accountAssertion = new AccountAssertion(driver);
+        accountAssertion = new AccountAssertion(driver, context);
     }
 
     public OpenNewAccountPage selectAccountType(){

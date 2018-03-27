@@ -4,6 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.testng.ITestContext;
 
 public class IndexPage extends MainPage {
 
@@ -24,8 +25,8 @@ public class IndexPage extends MainPage {
 
     private String url;
 
-    public IndexPage(WebDriver driver, String url) {
-        super(driver);
+    public IndexPage(WebDriver driver, String url, ITestContext context) {
+        super(driver, context);
         PageFactory.initElements(driver, this);
         this.url = url;
     }
@@ -48,18 +49,18 @@ public class IndexPage extends MainPage {
 
     public OverviewPage clickLoginButton(){
         loginButton.click();
-        return new OverviewPage(driver);
+        return new OverviewPage(driver, getContext());
     }
 
 
 
     public RegisterPage clickRegisterLink(){
         registerLink.click();
-        return new RegisterPage(driver);
+        return new RegisterPage(driver, getContext());
     }
 
     public TransferPage clickTransferFundsLink(){
         transferFundsLink.click();
-        return new TransferPage(driver);
+        return new TransferPage(driver, getContext());
     }
 }
