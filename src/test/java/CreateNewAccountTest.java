@@ -6,15 +6,15 @@ import org.testng.annotations.Test;
 
 public class CreateNewAccountTest extends MainTest {
 
-    @BeforeTest
-    @Parameters({"username", "password"})
-    public void prepare(String username, String password){
-        overviewPage = indexPage.run(new LoginScenario(username, password));
-    }
+//    @BeforeTest
+//    public void prepare(String username, String password){
+//        overviewPage = indexPage.run(new LoginScenario(username, password));
+//    }
 
     @Test
     public void shouldCreateNewAccount(){
-        overviewPage.run(new OpenNewAccountScenario())
+        indexPage.run(new LoginScenario(username, storedPassword))
+                .run(new OpenNewAccountScenario())
                 .accountAssertion
                 .isConfirmationDisplayed();
     }

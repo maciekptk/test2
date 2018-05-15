@@ -1,25 +1,8 @@
-import Scenarios.RegisterScenario;
 import Scenarios.TransferScenario;
-import org.testng.annotations.BeforeTest;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
-import java.util.Random;
-
 public class TransferTest extends MainTest {
-
-    @BeforeTest
-    @Parameters({"firstName", "lastName", "street", "city", "state", "zipCode", "password", "usernameTemplate", "ssnTemplate"})
-    public void prepareRegisteredUser(String firstName, String lastName, String street, String city, String state, String zipCode, String password, String usernameTemplate, String ssnTemplate) {
-
-        Random rg = new Random();
-        int randomInt = rg.nextInt(1000);
-        String username = usernameTemplate + randomInt;
-        String ssn = ssnTemplate + randomInt;
-
-        indexPage.run(new RegisterScenario(firstName, lastName, street, city, state, zipCode, password, usernameTemplate, ssnTemplate, username, ssn))
-                .clickHomeButton();
-    }
 
     @Test
     @Parameters({"transferAmount"})

@@ -12,9 +12,6 @@ import java.util.List;
 
 public class RegisterAssertion extends MainPage {
 
-//    Helpers theUsername = new Helpers(); Get "username" from Helpers
-//    String username = theUsername.getTheUsername();
-
     @FindBy(css = ".title")
     private List<WebElement> welcomeMessage;
 

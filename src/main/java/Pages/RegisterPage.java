@@ -52,6 +52,9 @@ public class RegisterPage extends MainPage {
     @FindBy(css = ".home")
     private WebElement homeButton;
 
+    @FindBy(css = "[href$='logout.htm']")
+    private WebElement logoutLink;
+
     private String url;
 
     public RegisterPage(WebDriver driver, ITestContext context) {
@@ -115,6 +118,11 @@ public class RegisterPage extends MainPage {
         return this;
     }
 
+    public IndexPage clickLogout(){
+        logoutLink.click();
+        return new IndexPage(driver, url, getContext());
+    }
+
     public OpenNewAccountPage clickOpenNewAccountLink(){
         openNewAccountLink.click();
         return new OpenNewAccountPage(driver, getContext());
@@ -129,4 +137,12 @@ public class RegisterPage extends MainPage {
         homeButton.click();
         return new IndexPage(driver, url, getContext());
     }
+
+    public RegisterPage setLoginName(String username){
+        setContextAttribute("loginName", username);
+        return this;
+    }
+
+
+
 }

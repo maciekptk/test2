@@ -52,8 +52,6 @@ public class IndexPage extends MainPage {
         return new OverviewPage(driver, getContext());
     }
 
-
-
     public RegisterPage clickRegisterLink(){
         registerLink.click();
         return new RegisterPage(driver, getContext());

@@ -1,6 +1,13 @@
 <suite name="Account">
     <parameter name="url" value="http://parabank.parasoft.com"/>
-    <parameter name="username" value="johnwayne594"/>
+    <parameter name="firstName" value="John"/>
+    <parameter name="lastName" value="Wayne"/>
+    <parameter name="street" value="Main Street 10"/>
+    <parameter name="city" value="Los Angeles"/>
+    <parameter name="state" value="California"/>
+    <parameter name="zipCode" value="90002"/>
+    <parameter name="ssnTemplate" value="AABB"/>
+    <parameter name="usernameTemplate" value="johnwayne"/>
     <parameter name="password" value="asdfzxcv"/>
 
     <test name="Create New Account test">
